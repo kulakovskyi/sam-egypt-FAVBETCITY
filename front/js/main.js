@@ -36,24 +36,13 @@ const footer = document.querySelector('.sam__footer');
 const logo = document.querySelector('.sam__logo')
 const footerCopy = document.querySelector('.sam__footer-copyright');
 
-let counter = 0;
 
 mobileButton.addEventListener('click', ()=>{
-    counter++;
     mainPage.classList.toggle('overflow');
     footer.classList.toggle('visible');
     mobileButton.classList.toggle('active');
-    mainPage.classList.add('mobile-none');
-    if(counter%2 === 0){
-        footerCopy.setAttribute('id', 'none');
-        logo.setAttribute('id', 'bottom');
-        mainPage.classList.remove('mobile-none');
-    }
-    if(counter%2 !== 0){
-        logo.setAttribute('id', 'none');
-        footerCopy.setAttribute('id', 'bottom');
-        mainPage.classList.remove('mobile-none');
-    }
+    logo.scrollIntoView();
+
 
 })
 
