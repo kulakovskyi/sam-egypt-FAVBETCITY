@@ -1,39 +1,37 @@
+const rulesBtn = document.querySelector('.sam__button-rules');
+const overlay = document.querySelector('.sam__overlay');
+const rulesContent = document.querySelector('.sam__back');
+const closeRules = document.querySelector('.sam__rules-close');
 
-(function(){
-    let screenWidth = window.innerWidth
-    if (screenWidth >= 1280){
-        let scene = document.getElementById('scene')
-        let parallaxInstance = new Parallax(scene)
-    }
-}());
+rulesBtn.addEventListener('click', ()=>{
+    overlay.classList.remove('opacity');
+    rulesContent.classList.remove('hidden');
+})
 
-window.addEventListener('orientationchange', () => {
-    window.location.reload()
-    // const orientation = window.matchMedia('(orientation: landscape)')
-    //
-    // if (orientation.matches) {
-    //     window.location.reload()
-    // }
-});
+closeRules.addEventListener('click', ()=>{
+    overlay.classList.add('opacity');
+    rulesContent.classList.add('hidden');
+})
 
-(function () {
-    let url = new URL(window.location.href)
+const copyCodeContent = document.querySelector('.sam__code-text').textContent;
+const copyBtn = document.querySelector('.sam__code-copy');
+const codeCopy = document.querySelector('.sam__code');
 
-    if (url.searchParams.has('qtag')) {
-        localStorage.setItem('qtag', url.searchParams.get('qtag'))
-    }
-
-    window.addEventListener('click', function (e) {
-        const parent = e.target.closest('a')
-        if (parent) {
-            e.preventDefault()
-            let link = new URL(parent.href)
-            link.searchParams.set('qtag', localStorage.getItem('qtag'))
-            document.location.href = link
-        }
-    })
-})();
-
+copyBtn.addEventListener('click', ()=>{
+    navigator.clipboard.writeText(copyCodeContent)
+        .then(() => {
+            console.log('Text copied to clipboard');
+            codeCopy.classList.add('copy')
+            copyBtn.disabled = true;
+            setTimeout(()=>{
+                codeCopy.classList.remove('copy');
+                copyBtn.disabled = false;
+            }, 5000)
+        })
+        // .catch(err => {
+        //     console.error('Error in copying text: ', err);
+        // });
+})
 
 
 
