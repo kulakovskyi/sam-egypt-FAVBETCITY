@@ -43,13 +43,16 @@ mobileButton.addEventListener('click', ()=>{
     mainPage.classList.toggle('overflow');
     footer.classList.toggle('visible');
     mobileButton.classList.toggle('active');
+    mainPage.classList.add('mobile-none');
     if(counter%2 === 0){
         footerCopy.setAttribute('id', 'none');
         logo.setAttribute('id', 'bottom');
+        mainPage.classList.remove('mobile-none');
     }
     if(counter%2 !== 0){
         logo.setAttribute('id', 'none');
         footerCopy.setAttribute('id', 'bottom');
+        mainPage.classList.remove('mobile-none');
     }
 
 })
