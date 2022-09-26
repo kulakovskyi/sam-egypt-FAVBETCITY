@@ -2,15 +2,20 @@ const rulesBtn = document.querySelector('.sam__button-rules');
 const overlay = document.querySelector('.sam__overlay');
 const rulesContent = document.querySelector('.sam__back');
 const closeRules = document.querySelector('.sam__rules-close');
+const logo = document.querySelector('.sam__logo')
+const mainPage = document.querySelector('.sam');
 
 rulesBtn.addEventListener('click', ()=>{
     overlay.classList.remove('opacity');
     rulesContent.classList.remove('hidden');
+    mainPage.classList.add('overflow');
+    logo.scrollIntoView();
 })
 
 closeRules.addEventListener('click', ()=>{
     overlay.classList.add('opacity');
     rulesContent.classList.add('hidden');
+    mainPage.classList.remove('overflow');
 })
 
 const copyCodeContent = document.querySelector('.sam__code-text').textContent;
@@ -30,12 +35,8 @@ copyBtn.addEventListener('click', ()=>{
         })
 })
 
-const mainPage = document.querySelector('.sam');
 const mobileButton = document.querySelector('.sam__button-mob');
 const footer = document.querySelector('.sam__footer');
-const logo = document.querySelector('.sam__logo')
-const footerCopy = document.querySelector('.sam__footer-copyright');
-
 
 mobileButton.addEventListener('click', ()=>{
     mainPage.classList.toggle('overflow');
