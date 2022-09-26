@@ -4,18 +4,24 @@ const rulesContent = document.querySelector('.sam__back');
 const closeRules = document.querySelector('.sam__rules-close');
 const logo = document.querySelector('.sam__logo')
 const mainPage = document.querySelector('.sam');
+const wrapperMain = document.querySelector('.sam__wrapper');
+const footer = document.querySelector('.sam__footer');
 
 rulesBtn.addEventListener('click', ()=>{
     overlay.classList.remove('opacity');
     rulesContent.classList.remove('hidden');
     mainPage.classList.add('overflow');
     logo.scrollIntoView();
+    wrapperMain.classList.add('blur');
 })
 
 closeRules.addEventListener('click', ()=>{
     overlay.classList.add('opacity');
     rulesContent.classList.add('hidden');
-    mainPage.classList.remove('overflow');
+    wrapperMain.classList.remove('blur');
+    if(footer.classList.contains('visible')){
+        mainPage.classList.remove('overflow');
+    }
 })
 
 const copyCodeContent = document.querySelector('.sam__code-text').textContent;
@@ -36,7 +42,6 @@ copyBtn.addEventListener('click', ()=>{
 })
 
 const mobileButton = document.querySelector('.sam__button-mob');
-const footer = document.querySelector('.sam__footer');
 
 mobileButton.addEventListener('click', ()=>{
     mainPage.classList.toggle('overflow');

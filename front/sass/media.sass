@@ -285,7 +285,7 @@
       bottom: 363px
       right: -76px
     &__footer
-      padding: 30px
+      padding: 30px 30px 25px
       &-list
         justify-content: space-between
       &-item
@@ -382,6 +382,16 @@
     &__salut1
       top: -270px
 
+@media screen and (max-width: 720px) and (orientation: portrait)
+  .sam
+    &__footer
+      &-item
+        margin: 0 29px 0 0
+        &:last-child
+          margin: 0
+    &__pyramid
+      top: 39%
+
 @media screen and (max-width: 710px) and (orientation: portrait)
   .sam
     &__back
@@ -476,7 +486,6 @@
         padding: 6px 8px 4px
         font-size: 13px
         line-height: 17px
-        margin-top: -2.1px
     .wrapper-mob
       padding: 17px 15px 8px
       background: $blue
