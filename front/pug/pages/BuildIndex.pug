@@ -1,4 +1,4 @@
-.sam
+.sam.overflow
     .sam__overlay.opacity
             .blur
             .sam__back.hidden
@@ -21,8 +21,11 @@
             .sam__code-info #[span 100 Rotiri Gratuite] COD PROMO
             button(type='button').sam__code-copy
                 img(src='img/copy.svg' alt='copy')
-        a(href='#').sam__link Intră acum
-        .sam__button-rules Cum se folosește codul promoțional?
+        .wrapper-mob
+            a(href='#').sam__link Intră acum
+            .sam__button-rules Cum se folosește codul promoțional?
+            a(href='#bottom').sam__button-mob
+                img(src='img/mob-bu.svg' alt='button')
     .sam__logo
         img(src='img/logo.svg' alt='logo')
     .sam__pyramid
@@ -52,7 +55,7 @@
             li.sam__footer-item
                 .percent +100
                 .info ROTIRI #[br] GRATUITE
-        .sam__footer-copyright
+        .sam__footer-copyright(id='bottom')
             .text L1200662W001197. #[br] Se aplică T&C
             img(src='img/18plus.svg' alt='18+').img1
             img(src='img/onjn.svg' alt='onjin').img2

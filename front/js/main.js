@@ -28,11 +28,44 @@ copyBtn.addEventListener('click', ()=>{
                 copyBtn.disabled = false;
             }, 5000)
         })
-        // .catch(err => {
-        //     console.error('Error in copying text: ', err);
-        // });
 })
 
+const mainPage = document.querySelector('.sam');
+const mobileButton = document.querySelector('.sam__button-mob');
+const footer = document.querySelector('.sam__footer');
+const logo = document.querySelector('.sam__logo')
+const footerCopy = document.querySelector('.sam__footer-copyright');
+
+let counter = 0;
+
+mobileButton.addEventListener('click', ()=>{
+    counter++;
+    mainPage.classList.toggle('overflow');
+    footer.classList.toggle('visible');
+    mobileButton.classList.toggle('active');
+    if(counter%2 === 0){
+        footerCopy.setAttribute('id', 'none');
+        logo.setAttribute('id', 'bottom');
+    }
+    if(counter%2 !== 0){
+        logo.setAttribute('id', 'none');
+        footerCopy.setAttribute('id', 'bottom');
+    }
+
+})
+
+const anchors = document.querySelectorAll('a[href*="#"]');
+
+for (const anchor of anchors) {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const blockID = anchor.getAttribute("href");
+        document.querySelector(blockID).scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    });
+}
 
 
 
