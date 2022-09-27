@@ -7,6 +7,18 @@ const mainPage = document.querySelector('.sam');
 const wrapperMain = document.querySelector('.sam__wrapper');
 const footer = document.querySelector('.sam__footer');
 
+
+if(window.innerWidth <= 600){
+    window.addEventListener('orientationchange', () => {
+        mainPage.classList.add('overflow');
+        logo.scrollIntoView();
+        footer.classList.remove('visible');
+        mobileButton.classList.remove('active');
+    });
+}
+
+
+
 rulesBtn.addEventListener('click', ()=>{
     overlay.classList.remove('opacity');
     rulesContent.classList.remove('hidden');
@@ -48,7 +60,6 @@ mobileButton.addEventListener('click', ()=>{
     footer.classList.toggle('visible');
     mobileButton.classList.toggle('active');
     logo.scrollIntoView();
-
 
 })
 

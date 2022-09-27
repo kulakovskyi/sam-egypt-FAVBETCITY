@@ -614,6 +614,34 @@
         top: 25px
         right: 25px
 
+@media screen and (max-width: 600px) and (orientation: portrait) and (min-height: 800px)
+  .sam
+    &__pers
+      transform-origin: bottom center
+      transform: scale(1.3)
+      left: -48px
+
+@media screen and (max-width: 380px) and (orientation: portrait) and (max-height: 660px)
+  .sam
+    &__info
+      padding: 63px 0 0 0
+    &__title
+      transform-origin: top center
+      transform: scale(0.8)
+      margin: 0 0 -9px 0
+    &__code
+      transform-origin: top center
+      transform: scale(0.8)
+    &__button-mob
+      height: 25px
+    &__pyramid
+      bottom: 95px
+    &__pers
+      bottom: 98px
+    &__salut1
+      top: -159px
+      right: -57px
+
 
 @media screen and (max-width: 375px) and (orientation: portrait)
   .sam
@@ -626,6 +654,19 @@
         line-height: 19px
         &:not(:last-child)
           margin: 0 0 15px 0
+
+@media screen and (max-width: 335px) and (orientation: portrait)
+  .sam
+    &__title
+      transform-origin: top center
+      transform: scale(0.8)
+      margin: 0 0 -9px 0
+    &__code
+      transform-origin: top center
+      transform: scale(0.8)
+    &__pers
+      left: -47px
+
 
 
 
@@ -658,10 +699,51 @@
         display: none
     &__rules
       min-width: 600px
+    &__logo
+      max-width: 174px
+    &__footer
+      padding: 7px
+      &-copyright
+        position: static
+        .text
+          font-size: 9px
+          line-height: 11px
+        .img1,
+        .img2
+          max-width: 32px
+      &-item
+        .percent
+          font-size: 28px
+          line-height: 28px
+          margin: 0 14px 0 0
+        .info
+          font-size: 12px
+          line-height: 14px
+    &__pyramid
+      width: 100%
+      height: auto
+      top: auto
+      bottom: 20px
+      left: -170px
+    &__pers
+      left: -24px
+      top: 23%
+    &__info
+      transform-origin: top right
+      transform: scale(0.7)
 
 @media screen and (max-width: 920px) and (orientation: landscape) and (max-height: 400px)
   .sam
     &__back
+      transform: scale(0.6)
+
+@media screen and (max-width: 920px) and (orientation: landscape) and (max-height: 380px)
+  .sam
+    &__pyramid
+      transform-origin: bottom left
+      transform: scale(0.9)
+    &__info
+      transform-origin: top right
       transform: scale(0.6)
 
 @media screen and (max-width: 920px) and (orientation: landscape) and (max-height: 345px)
@@ -670,9 +752,40 @@
       &::after
         transform-origin: right bottom
         transform: scale(0.68)
-
     &__back
       transform: scale(0.48)
+    &__pyramid
+      transform-origin: bottom left
+      transform: scale(0.8)
+      left: -85px
+    &__info
+      transform-origin: top right
+      transform: scale(0.5)
+
+@media screen and (max-width: 770px) and (orientation: landscape)
+  .sam
+    &__footer
+      transform: scale(0.8)
+      z-index: 10
+      transform-origin: bottom center
+      &::before
+        content: ''
+        position: absolute
+        width: 200%
+        height: 45.4px
+        background: $blue
+        bottom: 0
+        left: -100px
+        z-index: -1
+
+@media screen and (max-width: 620px) and (orientation: landscape)
+  .sam
+    &__footer
+      transform: scale(0.7)
+      z-index: 10
+      transform-origin: bottom center
+      &::before
+        left: -150px
 
 
 
